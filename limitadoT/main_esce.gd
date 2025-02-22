@@ -6,12 +6,12 @@ var next_door_x_offset = 0  # Distancia entre las siguientes puertas
 var random_spawn = true
 var posi = 0
 
-var contaW = 35
+var contaW = 5
 
 func _ready():
 	$tpue.start()
 	$hub/cont/twin.start(1)
-	$hub/cont/Label.set_text(str(contaW) + "s 4 win")
+	$hub/cont/Label.set_text(str(contaW) + " Move sideways")
 
 func _on_tpue_timeout():
 	doors_per_spawn += 1
@@ -55,7 +55,7 @@ func spawn_door():
 
 func _on_twin_timeout():
 
-	$hub/cont/Label.set_text(str(contaW) + "s 4 win")
+	$hub/cont/Label.set_text(str(contaW) + "s Dodge your enemies")
 	if contaW < 0:
 		$hub/cont/twin.start(4)
 		$hub/cont/Label.set_text("You win mmáquina!")
